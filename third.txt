@@ -1,0 +1,37 @@
+#!/user/local/bin/perl
+use POSIX;
+$date  = POSIX::strftime("%d",localtime());
+$month  = POSIX::strftime("%m",localtime());
+$year  = POSIX::strftime("%Y",localtime());
+
+@date1 = qw/14 15 16 20 22 25 30/;
+@month1 = qw/ 11 /;
+@year1 = qw/ 2017/;
+
+
+for($j=0;$j<=$#month;$j++)
+{
+for($i=0;$i<=$#date1;$i++) 
+{
+if($date == $date1[$i] && $month == $month1[$j])
+{
+print "today is ur event\n";
+}
+elsif($date > $date1[$i] && $month == $month1[$j] )
+{
+print "Sorry ur event is gone be alert for next time\n";
+}
+elsif($date+1 == $date1[$i] && $month == $month1[$j])
+{
+print "tommorow is ur event\n";
+}
+elsif($date+2 == $date1[$i] && $month == $month1[$j])
+{
+print "day after tommorow is ur event\n";
+}
+else
+{
+print "I will remind u later\n";
+}
+}
+}

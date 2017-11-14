@@ -1,0 +1,32 @@
+#!/user/local/bin/perl
+use POSIX;
+$date  = POSIX::strftime("%d",localtime());
+$month  = POSIX::strftime("%m",localtime());
+$year  = POSIX::strftime("%Y",localtime());
+
+print "Enter the event date DD \n";
+$date1=<STDIN>;
+print "Enter the event month mm \n";
+$month1=<STDIN>;
+print "Enter the event year yyyy \n";
+$year1=<STDIN>;
+if($date == $date1  && $month == $month1 && $year == $year1)
+{
+print "today is ur event\n";
+}
+elsif($date > $date1  || $month > $month1 || $year > $year1)
+{
+print "Sorry ur event is gone be alert for next time\n";
+}
+elsif($date1 == $date+1 && $month == $month1 && $year == $year1)
+{
+print "tommorow is ur event\n";
+}
+elsif($date1 == $date+2 && $month == $month1 && $year == $year1)
+{
+print "day after tommorow is ur event\n";
+}
+else
+{
+print "I will remind u later\n";
+}
